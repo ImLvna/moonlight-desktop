@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Moonlight Desktop",
   "main": "dist/main/index.js",
+  "packageManager": "pnpm@8.11.0",
   "scripts": {
     "build": "tsc",
     "start": "electron .",
