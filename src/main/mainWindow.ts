@@ -1,5 +1,6 @@
 import { BrowserWindow } from "electron";
-import { UserAgent, Channel } from "../constants";
+import { UserAgent, Channel, StaticDir } from "../constants";
+import { join } from "path";
 
 export default (channel: Channel) => {
   const mainWindow = new BrowserWindow({
@@ -7,6 +8,7 @@ export default (channel: Channel) => {
       nodeIntegration: true,
       contextIsolation: true,
     },
+    icon: join(StaticDir, "icon.png"),
   });
   mainWindow.menuBarVisible = false;
   mainWindow.maximize();

@@ -11,6 +11,7 @@ export default async function showFirstRun() {
       nodeIntegration: true,
       contextIsolation: true,
     },
+    icon: join(StaticDir, "icon.png"),
   });
   window.menuBarVisible = false;
   window.loadFile(join(StaticDir, "firstRun", "index.html"));

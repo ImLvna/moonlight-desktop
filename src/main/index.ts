@@ -13,6 +13,8 @@ app.on("ready", async () => {
 
   patch(config.moonlightDir);
 
+  /// We require it here instead of importing it at the top of the file because
+  /// we need it to import electron after it has been patched.
   const createMainWindow = require("./mainWindow").default;
 
   createMainWindow(config.discordChannel);
