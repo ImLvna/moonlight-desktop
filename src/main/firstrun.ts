@@ -1,7 +1,7 @@
 import { BrowserWindow } from "electron";
 import { join } from "path";
-import { Channel, StaticDir } from "../constants";
-import { Config, ConfigDir, config, writeConfig } from "./config";
+import { StaticDir } from "../constants";
+import { Config, writeConfig } from "./config";
 
 export default async function showFirstRun() {
   const window = new BrowserWindow({
@@ -12,7 +12,7 @@ export default async function showFirstRun() {
       contextIsolation: true,
     },
   });
-  window.setMenu(null);
+  window.menuBarVisible = false;
   window.loadFile(join(StaticDir, "firstRun", "index.html"));
 
   let isSubmitted = false;

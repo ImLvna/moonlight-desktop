@@ -1,4 +1,4 @@
-import { BrowserWindow, app, session } from "electron";
+import { BrowserWindow } from "electron";
 import { UserAgent, Channel } from "../constants";
 
 export default (channel: Channel) => {
@@ -8,9 +8,9 @@ export default (channel: Channel) => {
       contextIsolation: true,
     },
   });
+  mainWindow.menuBarVisible = false;
   mainWindow.maximize();
   mainWindow.webContents.setUserAgent(UserAgent);
-  mainWindow.setMenu(null);
   let subdomain = "";
   switch (channel) {
     case Channel.PTB:
