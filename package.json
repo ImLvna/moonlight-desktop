@@ -1,5 +1,9 @@
 {
   "name": "moonlight-desktop",
+  "author": {
+    "name": "Luna <3",
+    "email": "luna@uninit.dev"
+  },
   "version": "1.0.0",
   "description": "Moonlight Desktop",
   "main": "dist/main/index.js",
