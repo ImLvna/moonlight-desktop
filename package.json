@@ -1,12 +1,14 @@
 {
   "name": "moonlight-desktop",
   "version": "1.0.0",
-  "main": "dist/index.js",
+  "description": "Moonlight Desktop",
+  "main": "dist/main/index.js",
   "scripts": {
     "build": "tsc",
     "start": "electron .",
     "package": "pnpm build && electron-builder",
-    "package:dir": "pnpm build && electron-builder --dir"
+    "package:dir": "pnpm build && electron-builder --dir",
+    "electron-builder": "electron-builder"
   },
   "devDependencies": {
     "@types/node": "^20.10.4",
@@ -18,11 +20,54 @@
     "appId": "dev.moonlight.desktop",
     "files": [
       "dist/**/*",
-      "node_modules/**/*"
+      "static/**/*",
+      "node_modules/**/*",
+      "!**/node_modules/*/{CHANGELOG.md,README.md,README,readme.md,readme}",
+      "!**/node_modules/*/{test,__tests__,tests,powered-test,example,examples}",
+      "!**/node_modules/*.d.ts",
+      "!**/node_modules/.bin",
+      "!**/*.{iml,o,hprof,orig,pyc,pyo,rbc,swp,csproj,sln,xproj}",
+      "!.editorconfig",
+      "!**/._*",
+      "!**/{.DS_Store,.git,.hg,.svn,CVS,RCS,SCCS,.gitignore,.gitattributes}",
+      "!**/{__pycache__,thumbs.db,.flowconfig,.idea,.vs,.nyc_output}",
+      "!**/{appveyor.yml,.travis.yml,circle.yml}",
+      "!**/{npm-debug.log,yarn.lock,.yarn-integrity,.yarn-metadata.json}"
     ],
-    "afterAllArtifactBuild": "./afterAllArtifactBuild.js"
-  },
-  "dependencies": {
-    "@sentry/electron": "^4.15.1"
+    "directories": {
+      "output": "app"
+    },
+    "linux": {
+      "target": [
+        {
+          "target": "deb",
+          "arch": [
+            "x64",
+            "arm64"
+          ]
+        },
+        {
+          "target": "tar.gz",
+          "arch": [
+            "x64",
+            "arm64"
+          ]
+        },
+        {
+          "target": "rpm",
+          "arch": [
+            "x64",
+            "arm64"
+          ]
+        },
+        {
+          "target": "AppImage",
+          "arch": [
+            "x64",
+            "arm64"
+          ]
+        }
+      ]
+    }
   }
 }

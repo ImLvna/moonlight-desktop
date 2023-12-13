@@ -1,0 +1,29 @@
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: #313338;
+  color: #fff;
+  overflow: hidden;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+
+  justify-content: center;
+  align-items: center;
+}
+
+form > * {
+  margin: 10px 0;
+}
+
+input,
+select {
+  width: 75%;
+  height: 50px;
+  background-color: #1e1f22;
+  color: #fff;
+  border: none;
+}

@@ -1,0 +1,28 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <form id="firstRunForm">
+      <label for="discordChannel">Discord Channel</label>
+      <select name="discordChannel">
+        <option value="stable">Stable</option>
+        <option value="ptb">PTB</option>
+        <option value="canary">Canary</option>
+      </select>
+      <label for="moonlightDir">Moonlight Directory</label>
+      <input type="text" name="moonlightDir" />
+      <input type="submit" value="Submit" id="submitBtn" />
+    </form>
+    <script>
+      const form = document.getElementById("firstRunForm");
+      function submitForm(event) {
+        event.preventDefault();
+        const formData = new FormData(form);
+        const data = Object.fromEntries(formData.entries());
+        console.log(`ready:${JSON.stringify(data)}`);
+      }
+      form.addEventListener("submit", submitForm);
+    </script>
+  </body>
+</html>
