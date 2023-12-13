@@ -1,3 +1,3 @@
-declare module "injector-desktop" {
-  export const inject: () => Promise<void>;
+declare module "injector" {
+  export const inject: (asarPath: string) => Promise<void>;
 }

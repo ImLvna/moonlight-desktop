@@ -3,7 +3,6 @@ import showFirstRun from "./firstrun";
 import * as Config from "./config";
 import { existsSync, mkdir, mkdirSync } from "fs";
 import patch from "./patch";
-import createMainWindow from "./mainWindow";
 
 if (!existsSync(Config.ConfigDir)) mkdirSync(Config.ConfigDir);
 
@@ -18,6 +17,8 @@ app.on("ready", async () => {
   const config = Config.readConfig()!;
 
   patch(config.moonlightDir);
+
+  const createMainWindow = require("./mainWindow").default;
 
   createMainWindow(config.discordChannel);
 });

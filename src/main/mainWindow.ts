@@ -6,6 +6,7 @@ export default (channel: Channel) => {
     webPreferences: {
       nodeIntegration: true,
       contextIsolation: true,
+      preload: "",
     },
   });
   mainWindow.menuBarVisible = false;
