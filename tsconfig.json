@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "target": "esnext",
+    "module": "CommonJS",
+    "sourceMap": false,
+    "strict": true,
+    "types": ["node"],
+    "outDir": "dist",
+    "noImplicitAny": false
+  },
+  "include": ["src/*"]
+}
