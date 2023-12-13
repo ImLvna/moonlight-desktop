@@ -31,6 +31,8 @@ jobs:
 
       - name: Run Electron Builder
         run: pnpm electron-builder --${{ matrix.platform }}
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Upload Artifact
         uses: actions/upload-artifact@v3
